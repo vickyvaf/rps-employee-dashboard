@@ -30,6 +30,25 @@ graph TD
   F -.-> G[InMemory Mock Database]
 ```
 
+### 📁 Directory Structure
+
+```text
+├── public/
+│   └── mockServiceWorker.js   # Service worker for local API interception
+├── src/
+│   ├── api/
+│   │   ├── client.ts          # Axios client instance configuration
+│   │   └── queries.ts         # TanStack Query React custom hooks & mutation bindings
+│   ├── components/
+│   │   └── ui/                # shadcn/ui default layout components
+│   ├── mocks/
+│   │   ├── browser.ts         # Setup for local MSW browser runtime worker
+│   │   └── handlers.ts        # Endpoint route definitions & local in-memory DB state
+│   ├── App.tsx                # Central routing table, page layouts, and state container
+│   ├── index.css              # Global styles and Tailwind directives configuration
+│   └── main.tsx               # Entry mount with conditional MSW initialization code
+```
+
 ### 1. View & UI Layer
 - **Vite & React 19 + TypeScript**: Offers fast Hot Module Replacement (HMR) and compile-time type-safety.
 - **Tailwind CSS**: Modern utility classes built exclusively on standard design tokens (`text-xs`, `min-h-20`, `max-w-48`) without arbitrary values to preserve stylesheet cleanliness.
