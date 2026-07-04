@@ -4,6 +4,11 @@ A polished, responsive, and high-performing **Employee Dashboard** application b
 
 ---
 
+## 🧑‍💻 Preview
+https://github.com/user-attachments/assets/042be9c6-70be-4ef1-9471-c765002065d4
+
+---
+
 ## 🚀 Key Features
 
 - **📊 Dashboard Overview**: A central hub showing daily summaries (total employees, present today, pending leaves), quick actions, and recent announcements.
