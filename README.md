@@ -97,28 +97,3 @@ Make sure you have [Node.js](https://nodejs.org/) (v18+) and [pnpm](https://pnpm
    pnpm run build
    ```
    The compiled assets will be outputted to the `dist/` directory.
-
----
-
-## 🤖 AI Integration
-
-The **"Summarize with AI"** feature utilizes an asynchronous mock endpoint `/api/announcements/:id/summarize`. 
-- When triggered, it simulates a LLM (Large Language Model) call returning a structured array of key takeaways.
-- On mobile viewports, the button is designed to hide its text label (`hidden md:inline`) to display only the Sparkles icon, ensuring long announcement titles do not wrap and the layout remains balanced.
-- The developer experience and responsive layout adjustments were built in partnership with **Antigravity AI** (Google Mind/DeepMind).
-
----
-
-## 🧠 Assumptions & Trade-offs
-
-### 1. Data Persistence (In-Memory Mock)
-* **Assumption**: A client-side demonstration does not need database persistence.
-* **Trade-off**: MSW database states are maintained in browser memory. Reloading the application resets mock states (e.g., newly added leave requests will disappear). This is a standard trade-off for zero-dependency local setups.
-
-### 2. URL State Synchronization
-* **Assumption**: Users should be able to bookmark and share directory search queries and department filters.
-* **Trade-off**: We map the state of input fields directly to the browser search parameters. This adds minimal overhead to input typing handlers (as it pushes history/URL state updates), but significantly improves the shareability and UX of the dashboard.
-
-### 3. Standard Design System vs Custom Sizes
-* **Assumption**: Arbitrary Tailwind sizes (like `text-[10px]`) are code smells that complicate maintenance.
-* **Trade-off**: We replaced all arbitrary sizing tokens with Tailwind standard equivalents. This restricts micro-sizing control but ensures full compliance with design system guidelines and keeps output files lean.
